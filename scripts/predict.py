@@ -21,7 +21,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     test_ids = next(os.walk(args.test_data_dir))[1]
-    print test_ids
+    print(test_ids)
 
     data_names = ['data_crop']
     label_names = None
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
         pred_nii = nib.Nifti1Image(label, affine)
 
-        print str(idx) + ' ' + str(np.mean(label > 0)) + ' ' + str(np.unique(label))
+        print(str(idx) + ' ' + str(np.mean(label > 0)) + ' ' + str(np.unique(label)))
 
         if args.is_single_series:
             nib.save(pred_nii, os.path.join(args.out_data_dir, 'tumor_graphlabunn_class.nii.gz'))

@@ -35,7 +35,7 @@ if __name__ == '__main__':
     suffixes=config.data_suffixes
     if args.is_single_series:
         test_ids = ['']
-        suffixes = ['t1.nii.gz', 't2.nii.gz', 't1ce.nii.gz', 'flair.nii.gz']
+        suffixes = ['t1.nii', 't2.nii', 't1ce.nii', 'flair.nii']
 
     if not os.path.exists(args.out_data_dir):
         os.makedirs(args.out_data_dir)

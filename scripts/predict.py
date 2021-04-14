@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
         label = label.reshape(data.shape[2:]).astype(np.float32)
 
-        for key, value in config.dataset_transform_dict.iteritems():
+        for key, value in config.dataset_transform_dict.items():
             label[label == value] = key
 
         connected_regions = morphology.label(label > 0)

@@ -97,7 +97,7 @@ class Model:
             self.module.set_params(arg_params=self.arg_params, aux_params=self.aux_params, allow_missing=True, allow_extra=True)
         self.module.init_optimizer(optimizer=kwargs['optimizer'], optimizer_params=kwargs['optimizer_params'])
 
-        print 'model has been binded'
+        print('model has been binded')
         #prepare dicts for metrics
         self.train_metric = dict()
         self.val_metric = dict()
@@ -220,7 +220,7 @@ class Model:
         if comparator(val, self.best_val):
             self.best_val = val
             self.save()
-            print 'model saved'
+            print('model saved')
 
     def save(self):
         #save training state
@@ -241,8 +241,8 @@ class Model:
             self.symbol = sym
             
         #load training metadata 
-        self.train_metric = pickle.load(open(os.path.join(path,'train_metric.p'), 'rb'))
-        self.val_metric = pickle.load(open(os.path.join(path, 'val_metric.p'), 'rb'))
+        #self.train_metric = pickle.load(open(os.path.join(path,'train_metric.p'), 'rb'))
+        #self.val_metric = pickle.load(open(os.path.join(path, 'val_metric.p'), 'rb'))
         self.epoch = pickle.load(open(os.path.join(path, 'epoch.p'), 'rb'))
         self.module_desc = pickle.load(open(os.path.join(path, 'module_desc.p'), 'rb'))
 

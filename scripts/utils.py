@@ -38,11 +38,11 @@ def print_summary(symbol, shape=None, label_shape=None):
         arg_shape, output_shape, aux_shape = symbol.infer_shape(data=shape)
     elif label_shape is not None and shape is None :
         arg_shape, output_shape, aux_shape = symbol.infer_shape(label=label_shape)
-    print output_shape
+    print(output_shape)
 
 def print_shape(net, input_shape):
     arg_shape, output_shape, aux_shape = net.infer_shape(data=input_shape)
-    print output_shape
+    print(output_shape)
 def get_shape(net, input_shape):
     arg_shape, output_shape, aux_shape = net.infer_shape(data=input_shape)
-    return output_shape
+    return(output_shape)

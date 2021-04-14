@@ -138,7 +138,7 @@ class Model:
 
             tac = time.time()
 
-            print 'Epoch %d, time %s\n' % (i, tac - tic)
+            print('Epoch %d, time %s\n' % (i, tac - tic))
 
     def predict(self, batch):
         """
